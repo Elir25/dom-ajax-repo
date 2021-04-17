@@ -35,7 +35,7 @@
 })(jQuery); // End of use strict
 
 //parte 1, add the event listener
-document
+/*document
   .querySelector(".nav-link.js-scroll-trigger")
   .addEventListener("click", getLisaRepos);
 
@@ -66,4 +66,4 @@ function getLisaRepos(repoName) {
       });
     });
 }
-const myRepos = getLisaRepos("Elir25");
+const myRepos = getLisaRepos("Elir25");*/
