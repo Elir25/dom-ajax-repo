@@ -6,12 +6,18 @@ document
 
 function getLisaRepos(repoName) {
   let ulElement = document.querySelector("#repos-list"); //get the ul Element
+  let numOfRepos = document.querySelector("#repos-count"); //get the subheading (repos num)
 
   fetch(`https://api.github.com/users/${repoName}/repos`)
     .then(response => response.json())
     .then(repos => {
+      //show the number of repos
+      numOfRepos.textContent = repos.length;
+      console.log(numOfRepos.textContent);
+
+      //get the repos inside the list element and create the links
       return repos.forEach(rep => {
-        const myLiElement = document.createElement("li"); //new li element
+        const myLiElement = document.createElement("li");
 
         const url = rep.html_url;
 
@@ -26,4 +32,4 @@ function getLisaRepos(repoName) {
       });
     });
 }
-const myRepos = getLisaRepos("Elir25");
+let myRepos = getLisaRepos("Elir25");
